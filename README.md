@@ -4,19 +4,22 @@ __Ændringer__
 * S-Curve Acceleration sat til
 * Stepper Drivers sat til A4988 på X,Y,Z og E0
 * Bed Level sat til manual
+
 __Mangler__
 * Updater PID værdier til fundet
 
 __Husk at finde PID værdier for HotEnd__
 M303 E0 C8 S200
 [PID Tuning](http://reprap.org/wiki/PID_Tuning)
+
 __Husk at finde PID værdier for HeatBed__
 M303 E-1 C8 S90
 [PID Tuning](http://reprap.org/wiki/PID_Tuning)
+
 __Husk at kalibere extruder__
 [Toms 3d guide](https://toms3d.org/2014/04/06/3d-printing-guides-calibrating-your-extruder/)
 
-#Kompilere firmware med platformio
+# Kompilere firmware med platformio
 ```bash
 platformio run -target clean -e megaatmega2560
 platformio run -e megaatmega2560
