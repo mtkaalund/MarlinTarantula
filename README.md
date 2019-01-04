@@ -1,3 +1,39 @@
+# Updateret konfiguration til min Tevo Tarantula
+__Ændringer__
+* Sprog sat til dansk
+* S-Curve Acceleration sat til
+* Stepper Drivers sat til A4988 på X,Y,Z og E0
+* Bed Level sat til manual
+__Mangler__
+* Updater PID værdier til fundet
+
+__Husk at finde PID værdier for HotEnd__
+M303 E0 C8 S200
+[PID Tuning](http://reprap.org/wiki/PID_Tuning)
+__Husk at finde PID værdier for HeatBed__
+M303 E-1 C8 S90
+[PID Tuning](http://reprap.org/wiki/PID_Tuning)
+__Husk at kalibere extruder__
+[Toms 3d guide](https://toms3d.org/2014/04/06/3d-printing-guides-calibrating-your-extruder/)
+
+#Kompilere firmware med platformio
+```bash
+platformio run -target clean -e megaatmega2560
+platformio run -e megaatmega2560
+platformio run -target upload -e megaatmega2560
+```
+__Updatere platformio__
+```bash
+platformio update
+platformio upgrade
+```
+__Installere platformio på ElementaryOS__
+[Platformio install](http://docs.platformio.org/en/latest/installation.html)
+Da jeg bruger [ElementaryOS](http:://elementaryos.io) (gnu/linux) på min computer,
+kan det variere hvordan dette skal gøre. Jeg kan kun anbefale, at læse [installations dokumenterne](http://docs.platformio.org/en/latest/installation.html).
+* Installere python-pip `sudo apt -y install python-pip`
+* `pip install -U platformio`
+
 ============================================================================
 
 __Configured for MY Tevo Tarantula. It works for me, it may not work for you!__
